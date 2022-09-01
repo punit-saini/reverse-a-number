@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main() {
+  cout << "Enter a number " << endl;
+  int num, result = 0, i = 0, digitcounter, store;
+  cin >> num;
+  digitcounter = num;
+
+  while (digitcounter >= 1) {
+    digitcounter = digitcounter / 10;
+    i++;
+  }
+
+  while (num >= 1) {
+    store = num % 10;
+    num = num / 10;
+    result = (pow(10, i - 1) * store) + result;
+    i--;
+  }
+  cout << "It's revers is " << result << endl;
+}
